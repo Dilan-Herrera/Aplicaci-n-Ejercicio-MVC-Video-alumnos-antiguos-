@@ -1,0 +1,8 @@
+from app import db
+
+class Venta(db.Model):
+    __tablename__ = 'ventas'
+    idventas = db.Column(db.Integer, primary_key=True)
+    idusuario = db.Column(db.Integer, db.ForeignKey('usuarios.idusuarios'))
+    monto = db.Column(db.Float)
+    fecha = db.Column(db.Date)

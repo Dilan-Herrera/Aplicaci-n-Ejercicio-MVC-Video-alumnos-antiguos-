@@ -11,10 +11,8 @@ def create_app():
 
     db.init_app(app)
 
-    # Registrar Blueprint del controlador
     app.register_blueprint(comisiones_bp)
 
-    # Ruta principal (index)
     @app.route('/')
     def index():
         return render_template('index.html')
